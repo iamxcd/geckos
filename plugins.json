@@ -1,0 +1,35 @@
+[
+  {
+    "pluginKey": "aichat",
+    "version": "1.0.0",
+    "description": "AI 智能对话 - 支持多会话管理",
+    "author": "Unknown",
+    "url": "plugins/aichat/1.0.0/aichat.zip",
+    "type": "native"
+  },
+  {
+    "pluginKey": "ddns",
+    "version": "1.0.0",
+    "description": "DDNS 动态域名解析 - 支持阿里云/Cloudflare/DNSPod/华为云",
+    "author": "Unknown",
+    "url": "plugins/ddns/1.0.0/ddns.zip",
+    "type": "native"
+  },
+  {
+    "pluginKey": "gallery",
+    "version": "1.0.0",
+    "description": "Geckos 相册插件 - 自动扫描并管理图片和视频",
+    "author": "Unknown",
+    "url": "plugins/gallery/1.0.0/gallery.zip",
+    "type": "native"
+  },
+  {
+    "pluginKey": "hello",
+    "pluginName": "Hello 测试",
+    "version": "1.0",
+    "description": "Docker 插件测试应用，基于 Nginx 展示自定义页面",
+    "author": "Geckos",
+    "url": "plugins/hello/1.0/hello.zip",
+    "type": "docker"
+  }
+]

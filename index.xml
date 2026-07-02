@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GeckOS 灵蜥面板</title><link>https://www.geckosweb.cn/</link><description>GeckOS灵蜥面板 - 轻量级Linux Web管理面板，专为个人服务器、NAS、树莓派设计。一键部署Docker应用，集成AI工具部署，支持OpenClaw龙虾AI、Hermes爱马仕AI等AI应用一键安装，养龙虾养马走起，Web终端远程管理，可视化文件管理，系统监控，让Linux服务器管理像操作电脑一样简单。</description><generator>Hugo 0.163.3 &amp; FixIt v0.4.5</generator><language>zh-CN</language><lastBuildDate>Sat, 27 Jun 2026 07:25:05 +0000</lastBuildDate><atom:link href="https://www.geckosweb.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>安装 GeckOS</title><link>https://www.geckosweb.cn/docs/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.geckosweb.cn/docs/quick-start/</guid><description>&lt;h2 class="heading-element" id="系统要求"&gt;&lt;span&gt;系统要求&lt;/span&gt;
+ &lt;a href="#%e7%b3%bb%e7%bb%9f%e8%a6%81%e6%b1%82" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;说真的，GeckOS 对硬件要求低得离谱——毕竟纯 Go 开发，单二进制文件零依赖，你家里吃灰的那个小主机、树莓派，甚至那个 512M 内存的 VPS 都能跑起来：&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;配置&lt;/th&gt;
+					&lt;th&gt;最低要求&lt;/th&gt;
+					&lt;th&gt;推荐配置&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;CPU&lt;/td&gt;
+					&lt;td&gt;x86_64 / ARM64&lt;/td&gt;
+					&lt;td&gt;任意现代处理器&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;内存&lt;/td&gt;
+					&lt;td&gt;512 MB&lt;/td&gt;
+					&lt;td&gt;1 GB+&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;磁盘&lt;/td&gt;
+					&lt;td&gt;100 MB&lt;/td&gt;
+					&lt;td&gt;1 GB+&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;系统&lt;/td&gt;
+					&lt;td&gt;Linux&lt;/td&gt;
+					&lt;td&gt;Ubuntu / Debian / CentOS&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;权限&lt;/td&gt;
+					&lt;td&gt;root&lt;/td&gt;
+					&lt;td&gt;root&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GeckOS 需要 root 权限运行，毕竟要管 Docker、管文件、管系统，没点权限怎么干活。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 class="heading-element" id="一键安装强烈推荐"&gt;&lt;span&gt;一键安装（强烈推荐）&lt;/span&gt;
+ &lt;a href="#%e4%b8%80%e9%94%ae%e5%ae%89%e8%a3%85%e5%bc%ba%e7%83%88%e6%8e%a8%e8%8d%90" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;复制这一行，粘贴到终端，回车，完事：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://www.geckosweb.cn/install.sh | sudo bash&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;脚本会帮你把脏活累活全干了：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;检查系统环境&lt;/strong&gt; — 确认操作系统、CPU 架构，检查必要命令（wget、unzip）是否就位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;随机分配端口&lt;/strong&gt; — 在 10000-65535 范围里找个没被占用的端口，省得跟你别的服务打架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;获取最新版本&lt;/strong&gt; — 从云端拉最新版本号，永远不落伍&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;下载并安装&lt;/strong&gt; — 安装包下载到 &lt;code&gt;/opt/geckos/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置环境变量&lt;/strong&gt; — 创建符号链接到 &lt;code&gt;/usr/local/bin/geckos&lt;/code&gt;，在哪都能直接敲 &lt;code&gt;geckos&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设置数据目录&lt;/strong&gt; — 创建 &lt;code&gt;/geckosdata&lt;/code&gt;，文件管理就靠它&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置服务&lt;/strong&gt; — 创建 systemd 服务并设置开机自启，重启也不怕&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;启动服务&lt;/strong&gt; — 一切就绪，直接启动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 class="heading-element" id="安装完注意看"&gt;&lt;span&gt;安装完注意看&lt;/span&gt;
+ &lt;a href="#%e5%ae%89%e8%a3%85%e5%ae%8c%e6%b3%a8%e6%84%8f%e7%9c%8b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;装完终端会打印访问地址和默认账号，别手滑关了窗口：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认账号：&lt;code&gt;admin&lt;/code&gt; / &lt;code&gt;123456&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;配置文件：&lt;code&gt;/opt/geckos/config.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;数据目录：&lt;code&gt;/opt/geckos&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;文件管理数据：&lt;code&gt;/geckosdata&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ 首次登录后第一件事——改密码！别问我是怎么知道 &lt;code&gt;123456&lt;/code&gt; 不安全的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 class="heading-element" id="5-分钟上手"&gt;&lt;span&gt;5 分钟上手&lt;/span&gt;
+ &lt;a href="#5-%e5%88%86%e9%92%9f%e4%b8%8a%e6%89%8b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h3 class="heading-element" id="1-文件管理"&gt;&lt;span&gt;1. 文件管理&lt;/span&gt;
+ &lt;a href="#1-%e6%96%87%e4%bb%b6%e7%ae%a1%e7%90%86" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;左侧菜单点「文件管理」，像操作电脑一样拖拽上传、在线编辑文件、解压压缩包，不用敲一行命令。&lt;/p&gt;
+&lt;h3 class="heading-element" id="2-docker-容器"&gt;&lt;span&gt;2. Docker 容器&lt;/span&gt;
+ &lt;a href="#2-docker-%e5%ae%b9%e5%99%a8" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;点「Docker」，可以看到所有容器的运行状态，一键启停、查看日志，比命令行直观多了。&lt;/p&gt;
+&lt;h3 class="heading-element" id="3-web-终端"&gt;&lt;span&gt;3. Web 终端&lt;/span&gt;
+ &lt;a href="#3-web-%e7%bb%88%e7%ab%af" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;还是想敲命令？点「终端」，浏览器里直接连上服务器 shell，自带常用快捷键。&lt;/p&gt;
+&lt;h3 class="heading-element" id="4-系统监控"&gt;&lt;span&gt;4. 系统监控&lt;/span&gt;
+ &lt;a href="#4-%e7%b3%bb%e7%bb%9f%e7%9b%91%e6%8e%a7" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;「监控」页面实时显示 CPU、内存、磁盘、网络数据，服务器状态一目了然。&lt;/p&gt;
+&lt;h3 class="heading-element" id="5-安装插件"&gt;&lt;span&gt;5. 安装插件&lt;/span&gt;
+ &lt;a href="#5-%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;点「插件」→「云端」，浏览可用的插件扩展，一键安装到本地。&lt;/p&gt;
+&lt;h3 class="heading-element" id="6-应用商店"&gt;&lt;span&gt;6. 应用商店&lt;/span&gt;
+ &lt;a href="#6-%e5%ba%94%e7%94%a8%e5%95%86%e5%ba%97" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;打开桌面「应用商店」图标，浏览 Nginx、MySQL、Redis、WordPress 等 Docker 应用，填写环境变量一键部署，安装进度实时可见。&lt;/p&gt;
+&lt;h3 class="heading-element" id="7-手机端管理"&gt;&lt;span&gt;7. 手机端管理&lt;/span&gt;
+ &lt;a href="#7-%e6%89%8b%e6%9c%ba%e7%ab%af%e7%ae%a1%e7%90%86" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;装个手机 App，躺在床上也能管服务器。打开 App 自动扫描局域网发现 GeckOS 主机，IP 变了也不怕。手机上能敲终端、传文件、管 Docker、看监控，出门紧急排错不用找电脑。&lt;/p&gt;
+&lt;p&gt;详细功能见下方 &lt;a href="#%e6%89%8b%e6%9c%ba%e7%ab%af"&gt;手机端&lt;/a&gt; 章节。&lt;/p&gt;
+&lt;h2 class="heading-element" id="服务管理"&gt;&lt;span&gt;服务管理&lt;/span&gt;
+ &lt;a href="#%e6%9c%8d%e5%8a%a1%e7%ae%a1%e7%90%86" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;常用的就这几个，收藏了随时用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 启动
+sudo systemctl start geckos
+
+# 停止
+sudo systemctl stop geckos
+
+# 看看跑没跑
+sudo systemctl status geckos
+
+# 实时看日志，排错神器
+sudo journalctl -u geckos -f
+
+# 开机自启
+sudo systemctl enable geckos
+
+# 取消开机自启
+sudo systemctl disable geckos&lt;/code&gt;&lt;/pre&gt;&lt;h2 class="heading-element" id="geckos-命令行"&gt;&lt;span&gt;GeckOS 命令行&lt;/span&gt;
+ &lt;a href="#geckos-%e5%91%bd%e4%bb%a4%e8%a1%8c" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;装好之后 &lt;code&gt;geckos&lt;/code&gt; 命令随时待命：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 看版本
+geckos version
+
+# 看配置和运行状态，一目了然
+geckos status&lt;/code&gt;&lt;/pre&gt;&lt;h2 class="heading-element" id="手机端"&gt;&lt;span&gt;手机端&lt;/span&gt;
+ &lt;a href="#%e6%89%8b%e6%9c%ba%e7%ab%af" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;躺在床上也能管服务器，GeckOS 有原生移动端，iOS 和 Android 都能装：&lt;/p&gt;
+&lt;h3 class="heading-element" id="为什么装手机端"&gt;&lt;span&gt;为什么装手机端？&lt;/span&gt;
+ &lt;a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a3%85%e6%89%8b%e6%9c%ba%e7%ab%af" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;家里服务器 IP 经常变？路由器重启就换 IP？装个手机端就完事了——App 会自动扫描局域网发现 GeckOS 主机，不用记 IP，不用手动输地址，打开 App 直接连。&lt;/p&gt;
+&lt;h3 class="heading-element" id="核心功能"&gt;&lt;span&gt;核心功能&lt;/span&gt;
+ &lt;a href="#%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;局域网自动发现&lt;/strong&gt; — UDP 广播扫描，自动找到局域网内的 GeckOS 主机，IP 变了也不怕&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;移动端终端&lt;/strong&gt; — 手机上也能敲命令，自带虚拟键盘，出门紧急排错不用找电脑&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文件传输&lt;/strong&gt; — 手机和服务器互传文件，断点续传不怕中断&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker 管理&lt;/strong&gt; — 手机上查看容器状态、日志，随时启停容器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统监控&lt;/strong&gt; — CPU、内存、磁盘、网络实时数据，躺沙发上看也行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文件管理&lt;/strong&gt; — 浏览、编辑、上传下载，手机上也能操作服务器文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;插件管理&lt;/strong&gt; — 安装、更新插件，手机上一键搞定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 class="heading-element" id="下载"&gt;&lt;span&gt;下载&lt;/span&gt;
+ &lt;a href="#%e4%b8%8b%e8%bd%bd" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;即将上线，敬请期待。&lt;/p&gt;
+&lt;h3 class="heading-element" id="连接服务器"&gt;&lt;span&gt;连接服务器&lt;/span&gt;
+ &lt;a href="#%e8%bf%9e%e6%8e%a5%e6%9c%8d%e5%8a%a1%e5%99%a8" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;自动发现（推荐）&lt;/strong&gt; — 手机和服务器连同一 WiFi，打开 App 自动扫描出局域网内的 GeckOS 主机，点一下就能连，再也不怕 IP 变了&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;手动连接&lt;/strong&gt; — 不在同一局域网时，手动输入服务器地址和端口（建议配合 DDNS 或内网穿透使用）&lt;/li&gt;
+&lt;li&gt;用 Web 端的账号密码登录即可&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 提示：如果服务器 IP 经常变，推荐搭配 GeckOS 的 DDNS 插件使用，手机端通过域名连接，彻底告别 IP 烦恼。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 class="heading-element" id="卸载"&gt;&lt;span&gt;卸载&lt;/span&gt;
+ &lt;a href="#%e5%8d%b8%e8%bd%bd" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h3 class="heading-element" id="交互式卸载推荐"&gt;&lt;span&gt;交互式卸载（推荐）&lt;/span&gt;
+ &lt;a href="#%e4%ba%a4%e4%ba%92%e5%bc%8f%e5%8d%b8%e8%bd%bd%e6%8e%a8%e8%8d%90" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;会问你备不备份数据，比较稳妥：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://www.geckosweb.cn/uninstall.sh | sudo bash&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或者先下载再执行，心里更踏实：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://www.geckosweb.cn/uninstall.sh
+sudo bash uninstall.sh&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;卸载流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;停止服务&lt;/strong&gt; — 先把 GeckOS 停下来&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;禁用服务&lt;/strong&gt; — 移除 systemd 服务文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;备份数据&lt;/strong&gt; — 问你要不要备份（非交互模式直接跳过）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;删除安装目录&lt;/strong&gt; — &lt;code&gt;/opt/geckos/&lt;/code&gt; 整个移除&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;清理环境变量&lt;/strong&gt; — 删掉 &lt;code&gt;/usr/local/bin/geckos&lt;/code&gt; 符号链接，干干净净&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 class="heading-element" id="非交互式卸载"&gt;&lt;span&gt;非交互式卸载&lt;/span&gt;
+ &lt;a href="#%e9%9d%9e%e4%ba%a4%e4%ba%92%e5%bc%8f%e5%8d%b8%e8%bd%bd" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;管道方式执行时，脚本默认不备份直接卸载，适合脚本化操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://www.geckosweb.cn/uninstall.sh | sudo bash&lt;/code&gt;&lt;/pre&gt;&lt;h2 class="heading-element" id="手动安装"&gt;&lt;span&gt;手动安装&lt;/span&gt;
+ &lt;a href="#%e6%89%8b%e5%8a%a8%e5%ae%89%e8%a3%85" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;喜欢自己折腾的看这里，手动装也不复杂：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载最新安装包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;wget https://www.geckosweb.cn/geckos/{版本号}/geckos.zip&lt;/code&gt;&lt;/pre&gt;&lt;ol start="2"&gt;
+&lt;li&gt;解压到位&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;unzip geckos.zip -d /opt/geckos
+chmod &amp;#43;x /opt/geckos/geckos&lt;/code&gt;&lt;/pre&gt;&lt;ol start="3"&gt;
+&lt;li&gt;加个全局命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;ln -s /opt/geckos/geckos /usr/local/bin/geckos&lt;/code&gt;&lt;/pre&gt;&lt;ol start="4"&gt;
+&lt;li&gt;
+&lt;p&gt;配置文件已在程序目录，无需额外操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注册 systemd 服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;cat &amp;gt; /etc/systemd/system/geckos.service &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39;
+[Unit]
+Description=Geckos Web OS
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/geckos
+ExecStart=/opt/geckos/geckos serve
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+EOF&lt;/code&gt;&lt;/pre&gt;&lt;ol start="6"&gt;
+&lt;li&gt;启动！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;systemctl daemon-reload
+systemctl enable geckos
+systemctl start geckos&lt;/code&gt;&lt;/pre&gt;&lt;ol start="7"&gt;
+&lt;li&gt;创建数据目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;mkdir -p /geckosdata
+chmod 755 /geckosdata&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定，打开浏览器访问吧 🎉&lt;/p&gt;
+&lt;h2 class="heading-element" id="遇到问题"&gt;&lt;span&gt;遇到问题？&lt;/span&gt;
+ &lt;a href="#%e9%81%87%e5%88%b0%e9%97%ae%e9%a2%98" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;到 &lt;a href="https://github.com/iamxcd/geckos/issues" target="_blank" rel="external nofollow noopener noreferrer"&gt;GitHub Issues&lt;/a&gt; 反馈问题&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "new-api",
+    "name": "New API",
+    "description": "新一代 LLM 网关与 AI 资产管理系统，统一聚合 OpenAI/Claude/Gemini 等模型接口，支持渠道管理、用量统计、计费和权限控制",
+    "category": "AI",
+    "icon": "docker-apps/new-api.zip",
+    "author": "QuantumNous",
+    "version": "latest",
+    "homepage": "https://github.com/QuantumNous/new-api",
+    "url": "docker-apps/new-api.zip"
+  },
+  {
+    "slug": "wordpress",
+    "name": "WordPress",
+    "description": "全球最流行的博客和内容管理系统，丰富的主题和插件生态",
+    "category": "建站",
+    "icon": "docker-apps/wordpress.zip",
+    "author": "WordPress Foundation",
+    "version": "6.7",
+    "homepage": "https://wordpress.org",
+    "url": "docker-apps/wordpress.zip"
+  },
+  {
+    "slug": "mysql",
+    "name": "MySQL",
+    "description": "最流行的开源关系型数据库管理系统，适用于各类 Web 应用",
+    "category": "数据库",
+    "icon": "docker-apps/mysql.zip",
+    "author": "Oracle Corporation",
+    "version": "8.0",
+    "homepage": "https://mysql.com",
+    "url": "docker-apps/mysql.zip"
+  },
+  {
+    "slug": "redis",
+    "name": "Redis",
+    "description": "高性能的内存键值存储数据库，支持持久化，常用于缓存和消息队列",
+    "category": "数据库",
+    "icon": "docker-apps/redis.zip",
+    "author": "Redis Ltd.",
+    "version": "7.4",
+    "homepage": "https://redis.io",
+    "url": "docker-apps/redis.zip"
+  },
+  {
+    "slug": "nginx",
+    "name": "Nginx",
+    "description": "高性能的 Web 服务器和反向代理服务器，也可用作负载均衡器和 HTTP 缓存",
+    "category": "Web 服务器",
+    "icon": "docker-apps/nginx.zip",
+    "author": "Nginx Inc.",
+    "version": "1.27",
+    "homepage": "https://nginx.org",
+    "url": "docker-apps/nginx.zip"
+  },
+  {
+    "slug": "phpmyadmin",
+    "name": "phpMyAdmin",
+    "description": "基于 Web 的 MySQL/MariaDB 数据库管理工具，支持 SQL 查询、导入导出、用户管理",
+    "category": "实用工具",
+    "icon": "docker-apps/phpmyadmin.zip",
+    "author": "phpMyAdmin Team",
+    "version": "5.2",
+    "homepage": "https://www.phpmyadmin.net",
+    "url": "docker-apps/phpmyadmin.zip"
+  }
+]
