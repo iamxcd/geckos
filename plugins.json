@@ -1,10 +1,10 @@
 [
   {
     "pluginKey": "aichat",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "AI 智能对话，适配 Hermes / OpenClaw",
     "author": "Unknown",
-    "url": "plugins/aichat/0.1.0/aichat.zip",
+    "url": "plugins/aichat/0.2.0/aichat.zip",
     "type": "native"
   },
   {
